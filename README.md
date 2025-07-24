@@ -100,10 +100,46 @@ class Solution {
 
 ```
 
+# 191. Number of 1 Bits
 
+## Given a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).
 
+```
+time=O(k)
+space= O(1)
 
+class Solution {
+    public int hammingWeight(int n) {
+        //using bit manipulations...
+        int count=0;
+        while(n!=0){
+            n=n&(n-1); //remove the rightmost 1-bit...
+            count++;
+        }
+        return count;
+    }
+}
 
+```
+
+# 67. Add Binary
+## Given two binary strings a and b, return their sum as a binary string.
+
+```
+time=O(n)
+space= O(n)
+
+import java.math.BigInteger;
+class Solution {
+    public String addBinary(String a, String b) {
+        BigInteger num1=new BigInteger(a,2);
+        BigInteger num2=new BigInteger(b,2);
+        BigInteger sum= num1.add(num2);
+        return sum.toString(2); //converts back to binary string
+    }
+}
+
+```
 
 
 
